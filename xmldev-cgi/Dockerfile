@@ -1,0 +1,18 @@
+From centos:centos7
+ENV XPSEC_VERSION v1.2.0
+ENV SAXON_VERSION 9.9.1-2
+ENV SAXON_HOME /opt/saxon
+ENV SAXON_FILENAME Saxon9HE.jar
+WORKDIR /opt/
+RUN mkdir $SAXON_HOME \
+&& yum install -y ant \
+git \ 
+openjdk-1.8 \
+&& git clone https://github.com/xspec/xspec.git \
+&& cd /opt/xspec \
+&& git checkout ${XSPEC_VERSION} \
+&& cd $SAXON_HOME \
+&& curl -o $SAXON_FILENAME http://central.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar \
+&& yum remove git \
+&& yum clean -y all
+
