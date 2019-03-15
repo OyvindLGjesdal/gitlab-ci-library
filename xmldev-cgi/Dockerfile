@@ -13,6 +13,6 @@ openjdk-1.8 \
 && git checkout ${XSPEC_VERSION} \
 && cd $SAXON_HOME \
 && curl -o $SAXON_FILENAME http://central.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar \
-&& yum remove git \
+&& yum remove -y git \
 && yum clean -y all
 
