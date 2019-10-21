@@ -12,6 +12,5 @@ openjdk-1.8 \
 && cd /opt/xspec \
 && git checkout ${XSPEC_VERSION} \
 && cd $SAXON_HOME \
-&& curl -o $SAXON_FILENAME http://central.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar \
+&& curl -o $SAXON_FILENAME https://central.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar \
 && yum clean -y all
-
