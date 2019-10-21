@@ -1,3 +1,5 @@
 FROM oyvindlg:xmldev
+ENV SAXONPE_VERSION=9-9-1-5
 RUN rm $SAXON_HOME/$SAXON_FILENAME && \
-curl -o SAXON9PE.jar https://central.maven.org/maven2/net/sf/saxon/Saxon-PE/${SAXON_VERSION}/Saxon-PE-${SAXON_VERSION}.jar
+curl -o $SAXON_HOME/Saxon9PE.zip https://www.saxonica.com/download/SaxonPE${SAXONPE_VERSION}J.zip && \
+unzip Saxon9PE.zip
