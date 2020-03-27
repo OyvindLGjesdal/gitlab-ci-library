@@ -6,5 +6,6 @@ RUN yum install -y  unzip && \
 rm $SAXON_HOME/$SAXON_FILENAME && \
 curl -o jena.zip https://apache.uib.no/jena/binaries/apache-jena-${JENA_VERSION}.zip && \
 unzip jena.zip && \
+mv apache-jena-${JENA_VERSION}/ $JENA_HOME
 yum clean -y all && \
 rm jena.zip
