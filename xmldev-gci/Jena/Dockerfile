@@ -2,8 +2,7 @@ FROM oyvindlg/gitlab-ci-library:xmldev
 ENV JENA_VERSION=3.14.0
 ENV JENA_HOME=/opt/jena
 WORKDIR /opt
-RUN rm $SAXON_HOME/$SAXON_FILENAME && \
-curl -o jena.zip https://apache.uib.no/jena/binaries/apache-jena-${JENA_VERSION}.zip && \
+RUN curl -o jena.zip https://apache.uib.no/jena/binaries/apache-jena-${JENA_VERSION}.zip && \
 unzip jena.zip && \
 mv apache-jena-${JENA_VERSION}/ $JENA_HOME && \
 rm jena.zip
