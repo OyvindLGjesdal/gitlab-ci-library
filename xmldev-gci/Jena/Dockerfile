@@ -7,4 +7,5 @@ curl -o jena.zip https://apache.uib.no/jena/binaries/apache-jena-${JENA_VERSION}
 unzip jena.zip && \
 mv apache-jena-${JENA_VERSION}/ $JENA_HOME && \
 rm jena.zip && \
+yum remove -y unzip && \
 yum clean -y all
