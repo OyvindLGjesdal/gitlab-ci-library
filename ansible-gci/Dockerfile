@@ -5,4 +5,4 @@ RUN yum install -y epel-release openssl \
 python3-pip \
 git  \
 openssh-clients \
-&& pip install ansible-lint
+&& pip3 install ansible-lint
