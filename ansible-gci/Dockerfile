@@ -1,7 +1,7 @@
-From centos:centos7
+From centos:centos8
 
 RUN yum install -y epel-release openssl \
-&& yum install -y python2-pip \
+&& yum install -y python3 \
 git  \
 openssh-client \
 
