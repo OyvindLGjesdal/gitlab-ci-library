@@ -11,8 +11,8 @@ WORKDIR /opt/
 
 RUN mkdir $SAXON_HOME \
 && yum install -y git \ 
-&& java-11-openjdk \
-&& unzip \
+java-11-openjdk \
+unzip \
 && curl -o ant.zip https://apache.uib.no/ant/binaries/apache-ant-${ANT_VERSION}-bin.zip \
 && unzip ant.zip && mv apache-ant-${ANT_VERSION} $ANT_HOME \
 && rm ant.zip \
