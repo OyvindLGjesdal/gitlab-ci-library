@@ -19,4 +19,4 @@ java-11-openjdk \
 && cd $SAXON_HOME \
 && curl -o $SAXON_FILENAME https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar \
 && yum clean -y all
-ENV PATH="${PATH}:${ANT_HOME}/bin"
+ENV PATH "${PATH}:${ANT_HOME}/bin"
