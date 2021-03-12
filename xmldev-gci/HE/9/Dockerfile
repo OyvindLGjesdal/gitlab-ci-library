@@ -12,13 +12,14 @@ WORKDIR /opt/
 RUN mkdir $SAXON_HOME \
 && yum install git \ 
 java-11-openjdk \
+unzip \
 && curl -o ant.zip https://apache.uib.no/ant/binaries/apache-ant-${ANT_VERSION}-bin.zip \
 && unzip ant.zip && mv apache-ant-${ANT_VERSION} $ANT_HOME \
 && rm ant.zip \
 && git clone https://github.com/xspec/xspec.git \
 && yum clean -y all
 
-WORKDIR=/opt/xspec
+WORKDIR /opt/xspec
 
 git checkout ${XSPEC_VERSION} \
 && cd $SAXON_HOME \
