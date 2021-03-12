@@ -6,7 +6,7 @@ ENV SAXON_FILENAME Saxon9HE.jar
 ENV ANT_VERSION 1.10.9
 ENV ANT_HOME /opt/ant
 ENV PATH="${PATH}:${ANT_HOME}/bin"
-
+ENV JAVA_HOME /usr/lib/jvm/java
 WORKDIR /opt/
 
 RUN mkdir $SAXON_HOME \
@@ -25,3 +25,4 @@ RUN git checkout ${XSPEC_VERSION} \
 && cd $SAXON_HOME \
 && curl -o $SAXON_FILENAME https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar \
 && yum clean -y all
+&& java --version
