@@ -24,5 +24,5 @@ WORKDIR /opt/xspec
 RUN git checkout ${XSPEC_VERSION} \
 && cd $SAXON_HOME \
 && curl -o $SAXON_FILENAME https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar \
-&& yum clean -y all
+&& yum clean -y all \
 && java --version
