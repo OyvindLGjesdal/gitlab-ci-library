@@ -10,7 +10,7 @@ ENV PATH="${PATH}:${ANT_HOME}/bin"
 WORKDIR /opt/
 
 RUN mkdir $SAXON_HOME \
-&& yum install git \ 
+&& yum install -y git \ 
 java-11-openjdk \
 unzip \
 && curl -o ant.zip https://apache.uib.no/ant/binaries/apache-ant-${ANT_VERSION}-bin.zip \
