@@ -1,8 +1,9 @@
 From centos:centos8
 
 RUN yum install -y epel-release openssl \
-&& yum install -y python3 \
+&& yum install -y ansible \
+python3 \
 python3-pip \
 git  \
-openssh-clients \
-&& python3 -m pip install --user ansible ansible-lint
+openssh-clients &&
+pip3 install "ansible-lint[yamllint]"
