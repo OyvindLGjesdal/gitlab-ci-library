@@ -6,4 +6,4 @@ python3 \
 python3-pip \
 git  \
 openssh-clients && \
-pip install "ansible-lint[yamllint]"
+pip3 install "ansible-lint[yamllint]"
