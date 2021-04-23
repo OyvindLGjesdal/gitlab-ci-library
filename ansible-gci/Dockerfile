@@ -1,6 +1,6 @@
 From centos:centos8
 
-RUN yum install -y epel-release openssl \
+RUN yum install -y ansible epel-release openssl \
 && yum install -y python3 \
 python3-pip \
 git  \
