@@ -3,7 +3,7 @@ ENV JENA_VERSION=3.17.0
 ENV JENA_HOME=/opt/jena
 WORKDIR /opt
 RUN yum install -y  unzip && \
-curl -o jena.zip https://apache.uib.no/jena/binaries/apache-jena-${JENA_VERSION}.zip && \
+curl -o jena.zip https://archive.apache.org/dist/jena/binaries/apache-jena-${JENA_VERSION}.zip && \
 unzip jena.zip && \
 mv apache-jena-${JENA_VERSION}/ $JENA_HOME && \
 rm jena.zip && \
