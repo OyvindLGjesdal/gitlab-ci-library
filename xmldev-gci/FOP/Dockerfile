@@ -7,3 +7,4 @@ curl -o fop.tar.gz https://apache.uib.no/xmlgraphics/fop/binaries/fop-${FOP_VERS
 tar --extract --file=fop.tar.gz --strip-components=2 fop-${FOP_VERSION}/fop && \
  rm fop.tar.gz && \
 ls -alh
+COPY build.xml $FOP_HOME/build.xml
