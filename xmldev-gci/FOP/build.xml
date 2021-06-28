@@ -1,0 +1,18 @@
+<project name="fop">
+<property environment="env"/>
+<property name="fop.home" value="${env.FOP_HOME}"/>
+
+<taskdef name="fop"
+         classname="org.apache.fop.tools.anttasks.Fop">
+  <classpath>
+    <fileset dir="${fop.home}/lib">
+      <include name="*.jar"/>
+    </fileset>
+    <fileset dir="${fop.home}/build">
+      <include name="fop.jar"/>
+      <include name="fop-hyph.jar" />
+    </fileset>
+  </classpath>
+</taskdef>
+</project>
+
