@@ -6,6 +6,9 @@ ENV SAXON_FILENAME saxonhe.jar
 ENV ANT_VERSION 1.10.9
 ENV ANT_HOME /opt/ant
 ENV PATH "${PATH}:${ANT_HOME}/bin"
+ENV JAVA_HOME "/usr/lib/jvm/jre-11/"
+
+
 
 WORKDIR /opt/
 
