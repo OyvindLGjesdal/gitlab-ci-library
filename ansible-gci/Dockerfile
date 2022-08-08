@@ -1,9 +1,10 @@
 From rockylinux:8
 
-RUN yum install -y epel-release openssl \
-&& yum install -y ansible \
-python3 \
-python3-pip \
+RUN dnf update -y \
+&& dnf install -y epel-release openssl \
+&& dnf install -y ansible \
+python39 \
+python39-pip \
 git  \
 openssh-clients && \
 pip3 install "ansible-lint[yamllint]"
