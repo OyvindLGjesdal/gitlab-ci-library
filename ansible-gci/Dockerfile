@@ -1,4 +1,4 @@
-From centos:centos8
+From rockylinux:8
 
 RUN yum install -y epel-release openssl \
 && yum install -y ansible \
