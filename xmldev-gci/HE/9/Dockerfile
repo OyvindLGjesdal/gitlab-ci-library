@@ -13,7 +13,7 @@ RUN mkdir $SAXON_HOME \
 && yum install -y git \ 
 java-1.8.0-openjdk \
 unzip \
-&& curl -o ant.zip https://apache.uib.no/ant/binaries/apache-ant-${ANT_VERSION}-bin.zip \
+&& curl -o ant.zip https://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.zip \
 && unzip ant.zip && mv apache-ant-${ANT_VERSION} $ANT_HOME \
 && rm ant.zip \
 && git clone https://github.com/xspec/xspec.git \
