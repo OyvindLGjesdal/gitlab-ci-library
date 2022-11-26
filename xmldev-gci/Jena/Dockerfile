@@ -1,5 +1,5 @@
 FROM oyvindlg/gitlab-ci-library:xmldev
-ENV JENA_VERSION=3.17.0
+ENV JENA_VERSION=4.6.1
 ENV JENA_HOME=/opt/jena
 WORKDIR /opt
 RUN yum install -y  unzip && \
