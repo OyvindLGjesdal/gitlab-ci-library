@@ -1,6 +1,6 @@
 From centos:centos7
 ENV XPSEC_VERSION v2.2.4
-ENV SAXON_VERSION 11.4
+ENV SAXON_VERSION 11-4J
 ENV SAXON_HOME /opt/saxon
 ENV SAXON_FILENAME saxonhe.jar
 ENV ANT_VERSION 1.10.12
@@ -27,4 +27,4 @@ WORKDIR /opt/xspec
 RUN git checkout ${XSPEC_VERSION}
 
 WORKDIR $SAXON_HOME
-RUN curl -o $SAXON_FILENAME https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar
+RUN curl -o -L $SAXON_FILENAME https://downloads.sourceforge.net/project/saxon/Saxon-HE/11/Java/SaxonHE${SAXON_VERSION}.zip && unzip $SAXON_FILENAME
