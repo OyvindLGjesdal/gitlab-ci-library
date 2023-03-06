@@ -1,5 +1,5 @@
 FROM oyvindlg/gitlab-ci-library:xmldev
-ENV FOP_VERSION 2.6
+ENV FOP_VERSION 2.8
 ENV FOP_HOME /opt/fop
 RUN mkdir $FOP_HOME && \
 cd $FOP_HOME && \
