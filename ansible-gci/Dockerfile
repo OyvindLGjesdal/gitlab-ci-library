@@ -6,5 +6,6 @@ RUN dnf update -y \
 python39 \
 python39-pip \
 git  \
+rsync \
 openssh-clients && \
 pip3 install "ansible-lint>=5.4,<6.0" "ansible>=2.9,<2.10"
