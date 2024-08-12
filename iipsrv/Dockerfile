@@ -40,7 +40,7 @@ RUN apk add --no-cache \
 WORKDIR /usr/local/src/
 RUN git clone https://github.com/ruven/iipsrv.git && \
 cd iipsrv && \
-git checkout 
+git checkout $IIPSRV_VERSION
 # Checkout correct version
 # Configure and compile
 WORKDIR /usr/local/src/iipsrv/
@@ -52,7 +52,7 @@ COPY --from=build /usr/local/src/iipsrv/src/iipsrv.fcgi /usr/local/bin/iipsrv
 
 # Install runtime dependendencies
 
-# Create startup script which starts both lighttpd and iipsrv
+# Create startup script which starts iipsrv
 RUN echo -e "#!/bin/sh\n\
 iipsrv --bind \${HOST}:\${PORT}" > /usr/local/bin/run &&\
 chmod u+x /usr/local/bin/run
