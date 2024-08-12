@@ -39,6 +39,7 @@ RUN apk add --no-cache \
 # Get source and checkout version
 WORKDIR /usr/local/src/
 RUN git clone https://github.com/ruven/iipsrv.git && \
+cd iipsrv && \
 git checkout 
 # Checkout correct version
 # Configure and compile
