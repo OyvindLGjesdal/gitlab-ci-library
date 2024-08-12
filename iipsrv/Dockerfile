@@ -16,7 +16,7 @@ FROM alpine:latest AS build
 MAINTAINER oyvind.gjesdal@uib.no
 LABEL url "https://iipimage.sourceforge.io"
 LABEL author "Ruven <ruven@users.sourceforge.net>"
-EXPOSE 900
+EXPOSE 9000
 
 ENV IIPSRV_VERSION=iipsrv-1.2
 # Install build dependencies
@@ -34,7 +34,7 @@ RUN apk add --no-cache \
 	openjpeg-dev \
 	libpng-dev \
 	libwebp-dev \
-	libmemcached-dev \
+	libmemcached-dev
 
 # Get source and checkout version
 WORKDIR /usr/local/src/
