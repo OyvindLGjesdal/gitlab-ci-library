@@ -11,7 +11,7 @@
 
 # See more on https://github.com/ruven/iipsrv
 
-FROM alpine:latest AS build
+FROM debian:stable-slim AS build
 
 MAINTAINER oyvind.gjesdal@uib.no
 LABEL url "https://iipimage.sourceforge.io"
@@ -20,18 +20,25 @@ EXPOSE 9000
 
 ENV IIPSRV_VERSION=iipsrv-1.2
 # Install build dependencies
-RUN apk add --no-cache \
+RUN apt-get update && \
+apt-get install --no-install-recommends -y \
+	apt-utils \
+	apt-transport-https \
+	ca-certificates \
+	libopenjp2-7-dev \
+	libtiff-dev \
+	libjpeg-dev \
+	zlib1g-dev \
+	libfcgi-dev \
+	libwebp-dev \
+	libpng-dev \
 	git \
 	autoconf \
 	automake \
 	libtool \
+	pkg-config \
 	g++ \
 	make \
-	fcgi-dev \
-	tiff-dev \
-	libjpeg-turbo-dev \
-	zlib-dev \
-	openjpeg-dev \
 	libpng-dev \
 	libwebp-dev \
 	libmemcached-dev
@@ -47,7 +54,7 @@ WORKDIR /usr/local/src/iipsrv/
 RUN ./autogen.sh && \
     ./configure && make && ls && pwd && ls src && pwd && ls fcgi
 
-FROM alpine:latest
+FROM debian:stable-slim
 COPY --from=build /usr/local/src/iipsrv/src/iipsrv.fcgi /usr/local/bin/iipsrv
 
 # Install runtime dependendencies
