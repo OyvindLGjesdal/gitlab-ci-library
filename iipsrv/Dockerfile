@@ -45,7 +45,7 @@ git checkout $IIPSRV_VERSION
 # Configure and compile
 WORKDIR /usr/local/src/iipsrv/
 RUN ./autogen.sh && \
-    ./configure && ls && pwd && ls src && pwd && ls fcgi
+    ./configure && make && ls && pwd && ls src && pwd && ls fcgi
 
 FROM alpine:latest
 COPY --from=build /usr/local/src/iipsrv/src/iipsrv.fcgi /usr/local/bin/iipsrv
