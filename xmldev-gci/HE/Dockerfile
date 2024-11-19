@@ -1,12 +1,11 @@
-From redhat:ubi9
-ENV XPSEC_VERSION v2.2.4
-ENV SAXON_VERSION 12.5
-ENV SAXON_HOME /opt/saxon
-ENV SAXON_FILENAME saxonhe.jar
-ENV ANT_VERSION 1.10.12
-ENV ANT_HOME /opt/ant
-ENV PATH "${PATH}:${ANT_HOME}/bin"
-ENV JAVA_HOME "/usr/lib/jvm/jre-11/"
+FROM redhat/ubi9-minimal:latest
+ENV XPSEC_VERSION=v2.2.4
+ENV SAXON_VERSION=12.5
+ENV SAXON_HOME=/opt/saxon
+ENV ANT_VERSION=1.10.12
+ENV ANT_HOME=/opt/ant
+ENV PATH="${PATH}:${ANT_HOME}/bin"
+ENV JAVA_HOME="/usr/lib/jvm/jre-11/"
 
 
 
@@ -20,13 +19,13 @@ unzip \
 && unzip ant.zip && mv apache-ant-${ANT_VERSION} $ANT_HOME \
 && rm ant.zip \
 && git clone https://github.com/xspec/xspec.git \
-&& curl -o saxon.zip https://github.com/Saxonica/Saxon-HE/releases/download/SaxonHE12-5/SaxonHE12-5J.zip \
-&& unzip saxon.zip \
+&& cd $SAXON_HOME \
+&& curl -L -o saxon.zip https://github.com/Saxonica/Saxon-HE/releases/download/SaxonHE12-5/SaxonHE12-5J.zip \
+&& unzip saxon.zip && rm saxon.zip \
 && cd /opt/xspec \
-&& git checkout ${XSPEC_VERSION}
+&& git checkout ${XSPEC_VERSION} \
+&& dnf remove -y git unzip \
 && dnf clean -y all
-
-WORKDIR /opt/xspec
 
 WORKDIR $SAXON_HOME
 USER 10001
