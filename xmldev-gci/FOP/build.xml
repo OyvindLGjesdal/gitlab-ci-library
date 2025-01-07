@@ -9,8 +9,7 @@
       <include name="*.jar"/>
     </fileset>
     <fileset dir="${fop.home}/build">
-      <include name="fop.jar"/>
-      <include name="fop-hyph.jar" />
+      <include name="*.jar"/>
     </fileset>
   </classpath>
 </taskdef>
