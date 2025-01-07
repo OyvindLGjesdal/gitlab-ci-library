@@ -1,4 +1,4 @@
-FROM oyvindlg/gitlab-ci-library:xmldev
+FROM oyvindlg/gitlab-ci-library:xmldev-el9
 ENV FOP_VERSION 2.10
 ENV FOP_HOME /opt/fop
 RUN mkdir $FOP_HOME && \
